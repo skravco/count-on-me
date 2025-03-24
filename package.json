@@ -1,0 +1,23 @@
+{
+  "name": "count-on-me",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skravco/count-on-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skravco/count-on-me/issues"
+  },
+  "homepage": "https://github.com/skravco/count-on-me#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
