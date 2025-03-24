@@ -33,8 +33,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      # Add the official Render GitHub Action
       - name: Deploy to Render
-        run: |
-          curl -fsSL https://cli.render.com | bash
-          render deploy --service count-on-me
+        uses: render-examples/github-action@v0.0.1
+        with:
+          serviceId: count-on-me-e727
+          renderApiKey: ${{ secrets.RENDER_API_KEY }}
 
