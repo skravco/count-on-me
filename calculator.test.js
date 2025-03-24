@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require("./calculator");
+const { add, subtract, multiply, divide, sin, cos, log, sqrt } = require("./calculator");
 
 describe("Calculator Tests", () => {
     test("adds 5 + 3 to equal 8", () => {
@@ -15,6 +15,36 @@ describe("Calculator Tests", () => {
 
     test("divides 9 / 3 to equal 3", () => {
         expect(divide(9, 3)).toBe(3);
+    });
+	
+    // 🚀 Scientific Function Tests
+    test("sin of 0 should be 0", () => {
+        expect(sin(0)).toBe(0);
+    });
+
+    test("cos of 0 should be 1", () => {
+        expect(cos(0)).toBe(1);
+    });
+
+    test("log of 1 should be 0", () => {
+        expect(log(1)).toBe(0);
+    });
+
+    test("log of a number > 1", () => {
+        expect(log(10)).toBeCloseTo(2.3026, 4);
+    });
+
+    test("throws error for log of non-positive number", () => {
+        expect(() => log(0)).toThrow("Logarithm is undefined for non-positive numbers");
+        expect(() => log(-5)).toThrow("Logarithm is undefined for non-positive numbers");
+    });
+
+    test("sqrt of 4 should be 2", () => {
+        expect(sqrt(4)).toBe(2);
+    });
+
+    test("throws error for sqrt of negative number", () => {
+        expect(() => sqrt(-4)).toThrow("Square root is undefined for negative numbers");
     });
 
     // 🚀 Edge Cases  

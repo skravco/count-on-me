@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: count-on-me
+    env: static
+    buildCommand: ""
+    startCommand: ""
+    branch: master
+    deployOnPush: true
+    # Automatically deploy if GitHub Actions completes successfully
+    git:
+      branch: master
+

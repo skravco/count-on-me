@@ -1,4 +1,4 @@
-name: Run Jest Tests
+name: Run Jest Tests and Deploy to Render
 
 on:
   push:
@@ -25,4 +25,16 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+  deploy:
+    needs: test  # This ensures deployment happens only if the test job passes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to Render
+        run: |
+          curl -fsSL https://cli.render.com | bash
+          render deploy --service count-on-me
 
