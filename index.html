@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count On Me Calc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="theme-toggle">
+        <label class="switch">
+            <input type="checkbox" id="themeSwitch">
+            <span class="slider"></span>
+        </label>
+        <span>Dark Mode</span>
+    </div>
+
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+
+        <div class="buttons">
+            <button class="btn memory-clear">MC</button>
+            <button class="btn memory-recall">MR</button>
+            <button class="btn memory-add">M+</button>
+            <button class="btn memory-subtract">M-</button>
+
+            <button class="btn sqrt">√</button>
+            <button class="btn power">^</button>
+            <button class="btn log">log</button>
+            <button class="btn clear">C</button>
+
+            <button class="btn sin">sin</button>
+            <button class="btn cos">cos</button>
+            <button class="btn tan">tan</button>
+            <button class="btn delete">⌫</button>
+
+            <button class="btn number">7</button>
+            <button class="btn number">8</button>
+            <button class="btn number">9</button>
+            <button class="btn operator">/</button>
+
+            <button class="btn number">4</button>
+            <button class="btn number">5</button>
+            <button class="btn number">6</button>
+            <button class="btn operator">*</button>
+
+            <button class="btn number">1</button>
+            <button class="btn number">2</button>
+            <button class="btn number">3</button>
+            <button class="btn operator">-</button>
+
+            <button class="btn number zero">0</button>
+            <button class="btn number">.</button>
+            <button class="btn equals">=</button>
+            <button class="btn operator">+</button>
+        </div>
+
+        <div class="history">
+            <h3>History</h3>
+            <ul id="history-list"></ul>
+            <button class="btn clear-history">Clear History</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
