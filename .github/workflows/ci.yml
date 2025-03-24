@@ -33,10 +33,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Add the official Render GitHub Action
-      - name: Deploy to Render
-        uses: render-oss/deploy-render-action@v1.0.0
-        with:
-          serviceId: count-on-me-e727
-          renderApiKey: ${{ secrets.RENDER_API_KEY }}
+      - name: Trigger Deployment to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          # Make a POST request to trigger a deployment on Render
+          curl -X POST \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "serviceId": "srv-cvgkkodumphs73dj0vh0",   
+              "branch": "master"  
+            }' \
+            https://api.render.com/v1/services/srv-cvgkkodumphs73dj0vh0/deploys
 
