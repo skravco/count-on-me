@@ -35,7 +35,7 @@ jobs:
 
       # Add the official Render GitHub Action
       - name: Deploy to Render
-        uses: render-examples/github-action@v0.0.1
+        uses: render-oss/deploy-render-action@v1.0.0
         with:
           serviceId: count-on-me-e727
           renderApiKey: ${{ secrets.RENDER_API_KEY }}
